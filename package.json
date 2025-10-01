@@ -1,0 +1,30 @@
+{
+  "name": "podsite-workspace",
+  "version": "1.0.0",
+  "description": "Modern podcast website - monorepo workspace",
+  "private": true,
+  "workspaces": [
+    "app/frontend"
+  ],
+  "scripts": {
+    "build": "cd app/frontend && npm run build",
+    "preview": "cd app/frontend && npm run preview",
+    "update-content": "cd app/frontend && npm run update-content",
+    "update-audio": "cd app/frontend && npm run update-audio",
+    "validate:html": "cd app/frontend && npm run validate:html",
+    "validate:links": "cd app/frontend && npm run validate:links",
+    "validate:lighthouse": "cd app/frontend && npm run validate:lighthouse",
+    "validate:a11y": "cd app/frontend && npm run validate:a11y",
+    "validate": "cd app/frontend && npm run validate",
+    "install:frontend": "cd app/frontend && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "podcast",
+    "static-site",
+    "monorepo"
+  ],
+  "license": "MIT"
+}

@@ -1,50 +1,61 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Podsite Constitution
 
-## Core Principles
+## Overview
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+This is the main constitution for the Podsite project, a modern podcast platform built as a monorepo with separate frontend and backend applications. Each application has its own detailed constitution that must be followed.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+## Project Architecture
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Monorepo Structure
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+- **Frontend**: Static site built with modern web technologies, deployed to CDN
+- **Backend**: API services providing data and functionality to the frontend
+- **Specifications**: Shared contracts and documentation in `/specs/`
+- **Independent Deployment**: Each application can be deployed and scaled independently
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Core Principles
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+1. **Separation of Concerns**: Frontend and backend have distinct responsibilities
+2. **Contract-Driven Development**: Well-defined APIs and interfaces between systems
+3. **Independent Scalability**: Each application can scale based on its specific needs
+4. **Shared Standards**: Common development practices and quality gates
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Application Constitutions
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Frontend Constitution
+- **Location**: `/specs/frontend/constitution.md`
+- **Scope**: Static site generation, progressive enhancement, performance, accessibility
+- **Deployment**: Static hosting (GitHub Pages, Netlify, Vercel, Cloudflare Pages)
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Backend Constitution
+- **Location**: `/specs/backend/constitution.md`
+- **Scope**: API design, data management, security, scalability
+- **Deployment**: Cloud services (AWS, GCP, Azure) or containerized platforms
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+## Shared Development Standards
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Git Workflow
+- Feature branches with pull requests
+- Minimum one reviewer approval required
+- All changes must reference applicable constitution compliance
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Quality Gates
+- Automated testing and validation in CI/CD
+- Security scanning and dependency updates
+- Performance monitoring and alerting
+- Documentation must be kept current
+
+### Governance
+- This main constitution supersedes other project conventions
+- Application-specific constitutions take precedence for their respective domains
+- Amendments require documented proposal, review, and version bump
+- All PRs must include constitution compliance notes
+
+## Compliance
+
+All development work must comply with:
+1. This main constitution
+2. The applicable application constitution (frontend or backend)
+3. Any additional project-specific standards
+
+**Version**: 2.0.0 | **Ratified**: 2025-10-01 | **Last Amended**: 2025-10-01

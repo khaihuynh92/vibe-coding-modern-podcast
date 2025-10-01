@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast - Modern Audio Storytelling</title>
+  <meta name="description" content="Explore the art, science, and business of audio storytelling with our weekly podcast.">
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:title" content="Podcast - Modern Audio Storytelling">
+  <meta property="og:description" content="Explore the art, science, and business of audio storytelling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/assets/images/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Podcast - Modern Audio Storytelling">
+  <meta name="twitter:description" content="Explore the art, science, and business of audio storytelling.">
+  <meta name="twitter:image" content="https://example.com/assets/images/og-image.svg">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <h1 class="site-title">Podcast</h1>
+      <ul class="nav-menu">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/episodes.html">Episodes</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+    <section class="hero">
+      <h2>Modern Audio Storytelling</h2>
+      <p class="hero-description">Join us weekly as we explore the craft, business, and future of podcasting.</p>
+    </section>
+
+    <section class="featured-episode" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Episode</h2>
+      <!-- Content will be loaded from API -->
+    </section>
+
+    <section class="cta">
+      <h2>Browse All Episodes</h2>
+      <p>Explore our complete archive of episodes covering storytelling, production, and podcasting strategy.</p>
+      <a href="/episodes.html" class="btn-primary">View All Episodes</a>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Podcast. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+  </footer>
+
+  <!-- Fallback content for API -->
+  <script type="application/json" id="featured-episode-fallback">
+    {"id":"ep020","number":20,"title":"The Future We're Building","description":"Reflecting on our journey and looking ahead to what's next for this podcast.","duration":"50:12","publishDate":"2025-05-18","artworkUrl":"/assets/images/ep020.svg","artworkAlt":"Episode 20 artwork with future theme","audioUrl":"/assets/audio/mock.mp3","tags":["reflection","future","milestone"]}
+  </script>
+  
+  <script src="/assets/js/app.js" defer></script>
+  <script type="module" src="/assets/js/api-integration.js"></script>
+</body>
+</html>
+

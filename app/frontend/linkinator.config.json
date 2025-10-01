@@ -1,0 +1,11 @@
+{
+  "recurse": true,
+  "silent": false,
+  "concurrency": 10,
+  "retry": true,
+  "retryErrors": true,
+  "retryErrorsCount": 2,
+  "retryErrorsJitter": 1000,
+  "timeout": 10000
+}
+

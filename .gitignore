@@ -1,0 +1,6 @@
+.cursor/
+node_modules/
+dist/
+.lhci/
+.htmlvalidate-report.json
+*.log

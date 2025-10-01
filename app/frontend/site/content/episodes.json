@@ -1,0 +1,322 @@
+[
+  {
+    "id": "ep001",
+    "number": 1,
+    "title": "The Beginning: Why We Started This Podcast",
+    "description": "In our inaugural episode, we explore the motivations behind starting this podcast and what listeners can expect.",
+    "duration": "42:15",
+    "publishDate": "2025-01-05",
+    "artworkUrl": "/assets/images/ep001.svg",
+    "artworkAlt": "Episode 1 artwork featuring a microphone",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "introduction",
+      "podcast",
+      "journey"
+    ]
+  },
+  {
+    "id": "ep002",
+    "number": 2,
+    "title": "Deep Dive: The Art of Storytelling",
+    "description": "We discuss the fundamentals of compelling storytelling and how it applies to podcasting.",
+    "duration": "38:22",
+    "publishDate": "2025-01-12",
+    "artworkUrl": "/assets/images/ep002.svg",
+    "artworkAlt": "Episode 2 artwork with storytelling theme",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "storytelling",
+      "craft",
+      "techniques"
+    ]
+  },
+  {
+    "id": "ep003",
+    "number": 3,
+    "title": "Interview: The Future of Audio Content",
+    "description": "A conversation with industry experts about where audio content is heading in the next decade.",
+    "duration": "51:08",
+    "publishDate": "2025-01-19",
+    "artworkUrl": "/assets/images/ep003.svg",
+    "artworkAlt": "Episode 3 artwork showing futuristic audio waves",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "interview",
+      "future",
+      "trends"
+    ]
+  },
+  {
+    "id": "ep004",
+    "number": 4,
+    "title": "Sound Design Secrets",
+    "description": "Exploring the hidden world of sound design and how it elevates audio experiences.",
+    "duration": "44:50",
+    "publishDate": "2025-01-26",
+    "artworkUrl": "/assets/images/ep004.svg",
+    "artworkAlt": "Episode 4 artwork with sound waves",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "sound-design",
+      "production",
+      "technical"
+    ]
+  },
+  {
+    "id": "ep005",
+    "number": 5,
+    "title": "Building an Audience from Scratch",
+    "description": "Practical strategies for growing your podcast audience without a large budget.",
+    "duration": "39:17",
+    "publishDate": "2025-02-02",
+    "artworkUrl": "/assets/images/ep005.svg",
+    "artworkAlt": "Episode 5 artwork showing audience growth",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "marketing",
+      "growth",
+      "audience"
+    ]
+  },
+  {
+    "id": "ep006",
+    "number": 6,
+    "title": "The Psychology of Voice",
+    "description": "Understanding how voice tone, pace, and delivery affect listener engagement.",
+    "duration": "46:33",
+    "publishDate": "2025-02-09",
+    "artworkUrl": "/assets/images/ep006.svg",
+    "artworkAlt": "Episode 6 artwork featuring vocal elements",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "psychology",
+      "voice",
+      "communication"
+    ]
+  },
+  {
+    "id": "ep007",
+    "number": 7,
+    "title": "Monetization Strategies That Work",
+    "description": "A comprehensive guide to podcast monetization, from sponsorships to subscriptions.",
+    "duration": "48:25",
+    "publishDate": "2025-02-16",
+    "artworkUrl": "/assets/images/ep007.svg",
+    "artworkAlt": "Episode 7 artwork with monetization theme",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "monetization",
+      "business",
+      "revenue"
+    ]
+  },
+  {
+    "id": "ep008",
+    "number": 8,
+    "title": "Guest Interview: A Legend in Audio",
+    "description": "We sit down with a pioneering figure in the audio industry to discuss their career and insights.",
+    "duration": "55:42",
+    "publishDate": "2025-02-23",
+    "artworkUrl": "/assets/images/ep008.svg",
+    "artworkAlt": "Episode 8 artwork featuring guest interview",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "interview",
+      "legend",
+      "inspiration"
+    ]
+  },
+  {
+    "id": "ep009",
+    "number": 9,
+    "title": "Equipment Essentials for Beginners",
+    "description": "What gear you actually need to start podcasting and what you can skip.",
+    "duration": "41:18",
+    "publishDate": "2025-03-02",
+    "artworkUrl": "/assets/images/ep009.svg",
+    "artworkAlt": "Episode 9 artwork showing podcast equipment",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "equipment",
+      "beginners",
+      "gear"
+    ]
+  },
+  {
+    "id": "ep010",
+    "number": 10,
+    "title": "The Power of Authenticity",
+    "description": "Why being genuine and authentic is the secret weapon in podcasting success.",
+    "duration": "37:55",
+    "publishDate": "2025-03-09",
+    "artworkUrl": "/assets/images/ep010.svg",
+    "artworkAlt": "Episode 10 artwork emphasizing authenticity",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "authenticity",
+      "personal-brand",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "ep011",
+    "number": 11,
+    "title": "Editing Workflows That Save Time",
+    "description": "Efficient editing techniques and tools to streamline your podcast production.",
+    "duration": "43:12",
+    "publishDate": "2025-03-16",
+    "artworkUrl": "/assets/images/ep011.svg",
+    "artworkAlt": "Episode 11 artwork showing editing interface",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "editing",
+      "workflow",
+      "efficiency"
+    ]
+  },
+  {
+    "id": "ep012",
+    "number": 12,
+    "title": "Cross-Platform Distribution Mastery",
+    "description": "How to effectively distribute your podcast across all major platforms.",
+    "duration": "40:28",
+    "publishDate": "2025-03-23",
+    "artworkUrl": "/assets/images/ep012.svg",
+    "artworkAlt": "Episode 12 artwork with platform icons",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "distribution",
+      "platforms",
+      "reach"
+    ]
+  },
+  {
+    "id": "ep013",
+    "number": 13,
+    "title": "Creating Viral Podcast Moments",
+    "description": "Strategies for creating shareable moments that help your podcast go viral.",
+    "duration": "45:37",
+    "publishDate": "2025-03-30",
+    "artworkUrl": "/assets/images/ep013.svg",
+    "artworkAlt": "Episode 13 artwork with viral theme",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "viral",
+      "social-media",
+      "marketing"
+    ]
+  },
+  {
+    "id": "ep014",
+    "number": 14,
+    "title": "The Science of Retention",
+    "description": "Data-driven insights into keeping listeners engaged from start to finish.",
+    "duration": "49:15",
+    "publishDate": "2025-04-06",
+    "artworkUrl": "/assets/images/ep014.svg",
+    "artworkAlt": "Episode 14 artwork with analytics theme",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "retention",
+      "analytics",
+      "science"
+    ]
+  },
+  {
+    "id": "ep015",
+    "number": 15,
+    "title": "Building a Podcast Network",
+    "description": "The challenges and rewards of creating and managing a podcast network.",
+    "duration": "52:44",
+    "publishDate": "2025-04-13",
+    "artworkUrl": "/assets/images/ep015.svg",
+    "artworkAlt": "Episode 15 artwork showing network concept",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "network",
+      "business",
+      "scaling"
+    ]
+  },
+  {
+    "id": "ep016",
+    "number": 16,
+    "title": "Accessibility in Podcasting",
+    "description": "Making your podcast accessible to everyone, including transcripts and inclusive design.",
+    "duration": "38:51",
+    "publishDate": "2025-04-20",
+    "artworkUrl": "/assets/images/ep016.svg",
+    "artworkAlt": "Episode 16 artwork with accessibility symbols",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "accessibility",
+      "inclusion",
+      "transcripts"
+    ]
+  },
+  {
+    "id": "ep017",
+    "number": 17,
+    "title": "Live Podcasting: Tips and Tricks",
+    "description": "Everything you need to know about taking your podcast live successfully.",
+    "duration": "44:09",
+    "publishDate": "2025-04-27",
+    "artworkUrl": "/assets/images/ep017.svg",
+    "artworkAlt": "Episode 17 artwork with live streaming theme",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "live",
+      "streaming",
+      "engagement"
+    ]
+  },
+  {
+    "id": "ep018",
+    "number": 18,
+    "title": "Seasonal Content Strategies",
+    "description": "How to plan and execute seasonal podcast content that resonates with listeners.",
+    "duration": "41:36",
+    "publishDate": "2025-05-04",
+    "artworkUrl": "/assets/images/ep018.svg",
+    "artworkAlt": "Episode 18 artwork showing seasonal elements",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "strategy",
+      "seasonal",
+      "planning"
+    ]
+  },
+  {
+    "id": "ep019",
+    "number": 19,
+    "title": "Collaboration and Co-Hosting",
+    "description": "The dynamics of successful podcast partnerships and co-hosting relationships.",
+    "duration": "47:23",
+    "publishDate": "2025-05-11",
+    "artworkUrl": "/assets/images/ep019.svg",
+    "artworkAlt": "Episode 19 artwork showing collaboration",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "collaboration",
+      "partnerships",
+      "co-hosting"
+    ]
+  },
+  {
+    "id": "ep020",
+    "number": 20,
+    "title": "The Future We're Building",
+    "description": "Reflecting on our journey and looking ahead to what's next for this podcast.",
+    "duration": "50:12",
+    "publishDate": "2025-05-18",
+    "artworkUrl": "/assets/images/ep020.svg",
+    "artworkAlt": "Episode 20 artwork with future theme",
+    "audioUrl": "/assets/audio/mock.mp3",
+    "tags": [
+      "reflection",
+      "future",
+      "milestone"
+    ]
+  }
+]

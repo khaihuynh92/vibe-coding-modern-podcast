@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "PageContent",
+  "required": ["title", "body"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Page title"
+    },
+    "body": {
+      "type": "string",
+      "description": "Page body content (markdown or HTML)"
+    }
+  }
+}
+

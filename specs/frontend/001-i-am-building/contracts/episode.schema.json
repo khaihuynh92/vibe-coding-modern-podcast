@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Episode",
+  "required": ["id", "number", "title", "description", "duration", "publishDate", "artworkUrl", "artworkAlt", "audioUrl"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique episode identifier"
+    },
+    "number": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Episode number"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "description": "Episode title"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Short episode description"
+    },
+    "duration": {
+      "type": "string",
+      "pattern": "^[0-9]{1,2}:[0-9]{2}(:[0-9]{2})?$",
+      "description": "Duration in format MM:SS or HH:MM:SS"
+    },
+    "publishDate": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date"
+    },
+    "artworkUrl": {
+      "type": "string",
+      "description": "Relative path to artwork"
+    },
+    "artworkAlt": {
+      "type": "string",
+      "description": "Alt text for artwork"
+    },
+    "audioUrl": {
+      "type": "string",
+      "description": "Relative path to audio file"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Optional tags"
+    }
+  }
+}
+

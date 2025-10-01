@@ -1,0 +1,37 @@
+{
+  "name": "podsite",
+  "version": "1.0.0",
+  "description": "Modern podcast website - static site",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npx serve dist",
+    "update-content": "node scripts/update-content.mjs",
+    "update-audio": "node scripts/download-audio.mjs",
+    "validate:html": "npx html-validate dist/**/*.html",
+    "validate:links": "npx linkinator dist/index.html --recurse",
+    "validate:lighthouse": "npx lhci autorun",
+    "validate:a11y": "node tests/accessibility/axe.mjs",
+    "validate:api": "node tests/api/integration.mjs",
+    "validate": "npm run validate:html && npm run validate:links && npm run validate:a11y && npm run validate:lighthouse"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "html-validate": "^8.0.0",
+    "linkinator": "^6.0.0",
+    "@lhci/cli": "^0.13.0",
+    "axe-core": "^4.8.0",
+    "jsdom": "^24.0.0",
+    "glob": "^10.0.0",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.0"
+  },
+  "keywords": [
+    "podcast",
+    "static-site"
+  ],
+  "license": "MIT"
+}
+

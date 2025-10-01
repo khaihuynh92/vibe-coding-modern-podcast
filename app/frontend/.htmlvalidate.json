@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "require-sri": "error",
+    "no-inline-style": "error",
+    "wcag/h30": "error",
+    "wcag/h32": "error",
+    "wcag/h37": "error",
+    "valid-id": "error",
+    "no-dup-id": "error"
+  }
+}
+

@@ -82,6 +82,20 @@ When creating this spec from a user prompt:
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
 
+## Constitution Compliance *(mandatory)*
+
+This feature specification complies with the [Frontend Constitution](../../constitution.md) or [Backend Constitution](../../constitution.md):
+
+### [Constitution Section] Compliance
+- ✅ [Specific compliance requirement]
+- ✅ [Specific compliance requirement]
+- ✅ [Specific compliance requirement]
+
+### [Constitution Section] Compliance
+- ✅ [Specific compliance requirement]
+- ✅ [Specific compliance requirement]
+- ✅ [Specific compliance requirement]
+
 ---
 
 ## Review & Acceptance Checklist
@@ -99,6 +113,12 @@ When creating this spec from a user prompt:
 - [ ] Success criteria are measurable
 - [ ] Scope is clearly bounded
 - [ ] Dependencies and assumptions identified
+
+### Constitution Compliance
+- [ ] Appropriate constitution referenced (Frontend or Backend)
+- [ ] All relevant constitution sections addressed
+- [ ] Compliance requirements are specific and measurable
+- [ ] No constitution violations identified
 
 ---
 
