@@ -1,19 +1,37 @@
 {
-  "name": "podsite",
+  "name": "podsite-frontend",
   "version": "1.0.0",
-  "description": "Modern podcast website - static site",
+  "description": "Modern podcast website - static site frontend",
   "type": "module",
+  "main": "dist/index.html",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "preview": "npx serve dist",
+    "build": "npm run clean && node scripts/build.mjs",
+    "dev": "npm run build && npm run preview",
+    "start": "npm run preview",
+    "preview": "npx serve dist --single --listen 3000",
+    "clean": "rm -rf dist",
     "update-content": "node scripts/update-content.mjs",
     "update-audio": "node scripts/download-audio.mjs",
+    "test": "npm run validate",
+    "test:html": "npx html-validate dist/**/*.html",
+    "test:links": "npx linkinator dist/index.html --recurse",
+    "test:lighthouse": "npx lhci autorun",
+    "test:a11y": "node tests/accessibility/axe.mjs",
+    "test:api": "node tests/api/integration.mjs",
     "validate:html": "npx html-validate dist/**/*.html",
     "validate:links": "npx linkinator dist/index.html --recurse",
     "validate:lighthouse": "npx lhci autorun",
     "validate:a11y": "node tests/accessibility/axe.mjs",
     "validate:api": "node tests/api/integration.mjs",
-    "validate": "npm run validate:html && npm run validate:links && npm run validate:a11y && npm run validate:lighthouse"
+    "validate": "npm run validate:html && npm run validate:links && npm run validate:a11y && npm run validate:lighthouse",
+    "lint": "echo 'Add ESLint/Prettier here if needed'",
+    "deploy": "npm run build && echo 'Add deployment script here (e.g., to Netlify, Vercel, etc.)'",
+    "deploy:netlify": "npm run build && npx netlify deploy --prod --dir=dist",
+    "deploy:vercel": "npm run build && npx vercel --prod dist",
+    "deploy:gh-pages": "npm run build && npx gh-pages -d dist",
+    "prebuild": "echo 'Starting frontend build...'",
+    "postbuild": "echo 'Frontend build complete! Output in dist/'",
+    "prestart": "npm run build"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -26,12 +44,21 @@
     "jsdom": "^24.0.0",
     "glob": "^10.0.0",
     "ajv": "^8.12.0",
-    "ajv-formats": "^3.0.0"
+    "ajv-formats": "^3.0.0",
+    "serve": "^14.2.1"
   },
   "keywords": [
     "podcast",
-    "static-site"
+    "static-site",
+    "frontend",
+    "jamstack"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/podsite.git",
+    "directory": "app/frontend"
+  },
+  "homepage": "https://your-username.github.io/podsite"
 }
 

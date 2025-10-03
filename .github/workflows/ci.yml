@@ -1,4 +1,4 @@
-name: CI
+name: Monorepo CI
 
 on:
   push:
@@ -7,8 +7,38 @@ on:
     branches: [main, master]
 
 jobs:
-  build-and-validate:
+  detect-changes:
     runs-on: ubuntu-latest
+    outputs:
+      frontend: ${{ steps.changes.outputs.frontend }}
+      backend: ${{ steps.changes.outputs.backend }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            frontend:
+              - 'app/frontend/**'
+              - 'specs/frontend/**'
+            backend:
+              - 'app/backend/**'
+              - 'specs/backend/**'
+
+  frontend:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.frontend == 'true' }}
+    uses: ./.github/workflows/frontend-ci.yml
+
+  backend:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.backend == 'true' }}
+    uses: ./.github/workflows/backend-ci.yml
+
+  integration:
+    runs-on: ubuntu-latest
+    needs: [frontend, backend]
+    if: always() && (needs.frontend.result == 'success' || needs.frontend.result == 'skipped') && (needs.backend.result == 'success' || needs.backend.result == 'skipped')
     
     steps:
       - uses: actions/checkout@v4
@@ -16,31 +46,34 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
           cache: 'npm'
+          cache-dependency-path: app/frontend/package-lock.json
       
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build site
-        run: npm run build
-      
-      - name: Validate HTML
-        run: npm run validate:html
-      
-      - name: Check links
-        run: npm run validate:links
-      
-      - name: Accessibility check
-        run: npm run validate:a11y
-      
-      - name: Lighthouse CI
-        run: npm run validate:lighthouse
-      
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+      - name: Setup Go
+        uses: actions/setup-go@v4
         with:
-          name: dist
-          path: dist/
-          retention-days: 7
+          go-version: '1.21'
+          cache-dependency-path: app/backend/go.sum
+      
+      - name: Install frontend dependencies
+        run: cd app/frontend && npm ci
+      
+      - name: Install backend dependencies
+        run: cd app/backend && make deps
+      
+      - name: Run integration tests
+        run: |
+          # Start backend in background
+          cd app/backend && make dev &
+          BACKEND_PID=$!
+          
+          # Wait for backend to be ready
+          sleep 10
+          
+          # Build and test frontend with backend running
+          cd app/frontend && npm run build && npm test
+          
+          # Kill backend
+          kill $BACKEND_PID
 
