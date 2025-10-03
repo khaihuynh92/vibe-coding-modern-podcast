@@ -8,7 +8,7 @@
     "build": "npm run clean && node scripts/build.mjs",
     "dev": "npm run build && npm run preview",
     "start": "npm run preview",
-    "preview": "npx serve dist --single --listen 3000",
+    "preview": "npx serve dist --listen 3000",
     "clean": "rm -rf dist",
     "update-content": "node scripts/update-content.mjs",
     "update-audio": "node scripts/download-audio.mjs",

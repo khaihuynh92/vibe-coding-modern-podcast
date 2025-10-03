@@ -6,6 +6,8 @@
 // Import API modules
 import { initFeaturedEpisode } from '../../src/scripts/featured-episode.mjs';
 import { initEpisodesList } from '../../src/scripts/episodes-list.mjs';
+import { initAboutContent } from '../../src/scripts/about.mjs';
+import { initFAQContent } from '../../src/scripts/faq.mjs';
 
 // Initialize based on current page
 (function() {
@@ -19,6 +21,16 @@ import { initEpisodesList } from '../../src/scripts/episodes-list.mjs';
   // Initialize episodes list on episodes page
   if (document.querySelector('.episodes-container')) {
     initEpisodesList();
+  }
+
+  // Initialize about content on about page
+  if (document.querySelector('.about-container') || window.location.pathname.includes('about')) {
+    initAboutContent();
+  }
+
+  // Initialize FAQ content on FAQ page
+  if (document.querySelector('.faq-container') || window.location.pathname.includes('faq')) {
+    initFAQContent();
   }
 
   // Global audio player event listener

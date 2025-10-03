@@ -1,12 +1,44 @@
-node_modules
-npm-debug.log
+# Git
 .git
 .gitignore
+
+# Documentation
 README.md
-.env
-.nyc_output
-coverage
+*.md
+
+# Test files
+*_test.go
+tests/
+
+# Build artifacts
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Logs
 *.log
-tests
-.github
+
+# Temporary files
+tmp/
+temp/
+
+# Coverage files
+*.out
+coverage.html
+
+# Go specific
+vendor/

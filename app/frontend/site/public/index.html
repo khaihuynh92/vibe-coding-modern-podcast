@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="Podcast - Modern Audio Storytelling">
   <meta name="twitter:description" content="Explore the art, science, and business of audio storytelling.">
   <meta name="twitter:image" content="https://example.com/assets/images/og-image.svg">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' http://localhost:3001 http://127.0.0.1:3001 ws://localhost:3001 ws://127.0.0.1:3001;">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
@@ -26,9 +26,9 @@
       <h1 class="site-title">Podcast</h1>
       <ul class="nav-menu">
         <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/episodes.html">Episodes</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/episodes">Episodes</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/faq">FAQ</a></li>
       </ul>
     </nav>
   </header>
@@ -42,20 +42,23 @@
     <section class="featured-episode" aria-labelledby="featured-heading">
       <h2 id="featured-heading">Featured Episode</h2>
       <!-- Content will be loaded from API -->
+      <div id="featured-episode-fallback" style="display: none;">
+        <!-- Fallback content will be loaded here if API fails -->
+      </div>
     </section>
 
     <section class="cta">
       <h2>Browse All Episodes</h2>
       <p>Explore our complete archive of episodes covering storytelling, production, and podcasting strategy.</p>
-      <a href="/episodes.html" class="btn-primary">View All Episodes</a>
+      <a href="/episodes" class="btn-primary">View All Episodes</a>
     </section>
   </main>
 
   <footer role="contentinfo">
     <p>&copy; 2025 Podcast. All rights reserved.</p>
     <nav aria-label="Footer navigation">
-      <a href="/about.html">About</a>
-      <a href="/faq.html">FAQ</a>
+      <a href="/about">About</a>
+      <a href="/faq">FAQ</a>
     </nav>
   </footer>
 
