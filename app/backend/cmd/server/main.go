@@ -13,6 +13,8 @@ import (
 	"github.com/podsite/backend/internal/config"
 	"github.com/podsite/backend/internal/handlers"
 	"github.com/podsite/backend/internal/middleware"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // @title Podsite API
@@ -60,13 +62,15 @@ func main() {
 			episodes.GET("/featured", handlers.GetFeaturedEpisode)
 			episodes.GET("/:id", handlers.GetEpisodeByID)
 		}
+		
+		// Content routes
+		api.GET("/about", handlers.GetAbout)
+		api.GET("/faq", handlers.GetFAQ)
 	}
 
 	// Swagger documentation (only in development)
 	if cfg.Environment != "production" {
-		// This will be added when we implement Swagger
-		// docs.SwaggerInfo.BasePath = "/api"
-		// router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+		router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
 
 	// Create HTTP server
