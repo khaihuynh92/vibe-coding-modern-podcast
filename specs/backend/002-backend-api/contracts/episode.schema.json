@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Episode",
+  "description": "Schema for podcast episode data",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique episode identifier",
+      "pattern": "^ep\\d{3}$",
+      "example": "ep001"
+    },
+    "number": {
+      "type": "integer",
+      "description": "Episode number",
+      "minimum": 1,
+      "example": 1
+    },
+    "title": {
+      "type": "string",
+      "description": "Episode title",
+      "minLength": 1,
+      "maxLength": 200,
+      "example": "Welcome to Our Podcast"
+    },
+    "description": {
+      "type": "string",
+      "description": "Episode description",
+      "minLength": 1,
+      "maxLength": 1000,
+      "example": "In our inaugural episode, we introduce ourselves and share what you can expect from this podcast."
+    },
+    "duration": {
+      "type": "string",
+      "description": "Episode duration in MM:SS format",
+      "pattern": "^\\d{1,2}:\\d{2}$",
+      "example": "25:30"
+    },
+    "publishDate": {
+      "type": "string",
+      "description": "Episode publish date in YYYY-MM-DD format",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "example": "2025-01-01"
+    },
+    "artworkUrl": {
+      "type": "string",
+      "description": "URL to episode artwork",
+      "format": "uri",
+      "example": "/assets/images/ep001.svg"
+    },
+    "artworkAlt": {
+      "type": "string",
+      "description": "Alt text for episode artwork",
+      "maxLength": 200,
+      "example": "Episode 1 artwork"
+    },
+    "audioUrl": {
+      "type": "string",
+      "description": "URL to episode audio file",
+      "format": "uri",
+      "example": "/assets/audio/mock.mp3"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Episode tags",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 50
+      },
+      "example": ["introduction", "welcome"]
+    }
+  },
+  "required": ["id", "number", "title", "description", "duration", "publishDate", "artworkUrl", "audioUrl", "tags"],
+  "additionalProperties": false
+}

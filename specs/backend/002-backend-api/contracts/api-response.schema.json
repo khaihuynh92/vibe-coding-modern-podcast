@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "API Response",
+  "description": "Common API response schemas",
+  "definitions": {
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "description": "Error type identifier",
+          "example": "not_found"
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable error message",
+          "example": "Episode not found"
+        },
+        "code": {
+          "type": "integer",
+          "description": "HTTP status code",
+          "example": 404
+        }
+      },
+      "required": ["error", "message", "code"],
+      "additionalProperties": false
+    },
+    "HealthResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Health status",
+          "enum": ["healthy", "unhealthy"],
+          "example": "healthy"
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Response timestamp in ISO 8601 format",
+          "format": "date-time",
+          "example": "2025-10-03T02:10:32Z"
+        },
+        "version": {
+          "type": "string",
+          "description": "API version",
+          "example": "2.0.0"
+        },
+        "uptime": {
+          "type": "string",
+          "description": "Server uptime duration",
+          "example": "4.972645785s"
+        },
+        "system": {
+          "type": "object",
+          "description": "System information",
+          "properties": {
+            "go_version": {
+              "type": "string",
+              "example": "go1.25.1"
+            },
+            "num_goroutines": {
+              "type": "string",
+              "example": "5"
+            },
+            "num_cpu": {
+              "type": "string",
+              "example": "8"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "required": ["status", "timestamp", "version", "uptime", "system"],
+      "additionalProperties": false
+    },
+    "AboutContent": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "About page title",
+          "example": "About Our Podcast"
+        },
+        "description": {
+          "type": "string",
+          "description": "About page description",
+          "example": "Welcome to our podcast—a space where we explore the art, science, and business of audio storytelling."
+        },
+        "mission": {
+          "type": "string",
+          "description": "Podcast mission statement",
+          "example": "We're dedicated to demystifying the podcasting world and providing actionable insights for creators at every stage of their journey."
+        },
+        "whoWeAre": {
+          "type": "string",
+          "description": "Information about the team",
+          "example": "Our team brings together years of experience in audio production, content creation, and digital media."
+        },
+        "whatWeCover": {
+          "type": "array",
+          "description": "List of topics covered",
+          "items": {
+            "type": "string"
+          },
+          "example": ["Production techniques and sound design secrets", "Audience growth strategies that actually work"]
+        },
+        "joinCommunity": {
+          "type": "string",
+          "description": "Community information",
+          "example": "We believe podcasting is better together. Join thousands of creators who tune in each week to level up their craft."
+        }
+      },
+      "required": ["title", "description", "mission", "whoWeAre", "whatWeCover", "joinCommunity"],
+      "additionalProperties": false
+    },
+    "FAQItem": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "description": "FAQ question",
+          "example": "How often do you release new episodes?"
+        },
+        "answer": {
+          "type": "string",
+          "description": "FAQ answer",
+          "example": "We release a new episode every week, typically on Sundays."
+        }
+      },
+      "required": ["question", "answer"],
+      "additionalProperties": false
+    },
+    "FAQContent": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "description": "List of FAQ items",
+          "items": {
+            "$ref": "#/definitions/FAQItem"
+          }
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false
+    }
+  }
+}

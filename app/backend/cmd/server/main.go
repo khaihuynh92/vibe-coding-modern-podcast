@@ -12,7 +12,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/podsite/backend/internal/config"
 	"github.com/podsite/backend/internal/handlers"
+	"github.com/podsite/backend/internal/logger"
 	"github.com/podsite/backend/internal/middleware"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // @title Podsite API
@@ -33,6 +36,10 @@ func main() {
 	// Load configuration
 	cfg := config.Load()
 
+	// Initialize logger
+	logger.InitLogger(cfg.LogLevel)
+	appLogger := logger.GetLogger()
+
 	// Set Gin mode based on environment
 	if cfg.Environment == "production" {
 		gin.SetMode(gin.ReleaseMode)
@@ -46,6 +53,9 @@ func main() {
 	router.Use(middleware.Recovery())
 	router.Use(middleware.CORS(cfg.CORSOrigins))
 	router.Use(middleware.Security())
+	router.Use(middleware.RateLimit())
+	router.Use(middleware.Compression())
+	router.Use(appLogger.LogRequest())
 
 	// Health check endpoints
 	router.GET("/health", handlers.HealthCheck)
@@ -56,17 +66,19 @@ func main() {
 	{
 		episodes := api.Group("/episodes")
 		{
-			episodes.GET("", handlers.GetEpisodes)
-			episodes.GET("/featured", handlers.GetFeaturedEpisode)
-			episodes.GET("/:id", handlers.GetEpisodeByID)
+			episodes.GET("", middleware.Cache(5*time.Minute), handlers.GetEpisodes)
+			episodes.GET("/featured", middleware.Cache(5*time.Minute), handlers.GetFeaturedEpisode)
+			episodes.GET("/:id", middleware.Cache(5*time.Minute), handlers.GetEpisodeByID)
 		}
+
+		// Content routes with longer cache times (static content)
+		api.GET("/about", middleware.Cache(30*time.Minute), handlers.GetAbout)
+		api.GET("/faq", middleware.Cache(30*time.Minute), handlers.GetFAQ)
 	}
 
 	// Swagger documentation (only in development)
 	if cfg.Environment != "production" {
-		// This will be added when we implement Swagger
-		// docs.SwaggerInfo.BasePath = "/api"
-		// router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+		router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
 
 	// Create HTTP server

@@ -25,7 +25,10 @@ export const API_CONFIG = {
 export const ENDPOINTS = {
   featuredEpisode: '/episodes/featured',
   episodes: '/episodes',
-  episodeById: (id) => `/episodes/${id}`
+  episodeById: (id) => `/episodes/${id}`,
+  about: '/about',
+  faq: '/faq',
+  health: '/health'
 };
 
 // Feature flags

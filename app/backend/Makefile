@@ -47,6 +47,18 @@ test-race: ## Run tests with race detection
 	@echo "Running tests with race detection..."
 	@go test -race -v ./...
 
+test-handlers: ## Run handler tests only
+	@echo "Running handler tests..."
+	@go test -v ./internal/handlers/...
+
+test-models: ## Run model tests only
+	@echo "Running model tests..."
+	@go test -v ./internal/models/...
+
+test-middleware: ## Run middleware tests only
+	@echo "Running middleware tests..."
+	@go test -v ./internal/middleware/...
+
 benchmark: ## Run benchmarks
 	@echo "Running benchmarks..."
 	@go test -bench=. -benchmem ./...
@@ -96,6 +108,27 @@ docker-run: ## Run Docker container
 docker-dev: ## Run Docker container in development mode
 	@echo "Running Docker container in development mode..."
 	@docker run -p 3001:3001 -v $(PWD):/app --env-file .env $(DOCKER_IMAGE) make dev
+
+# Docker Compose
+docker-compose-up: ## Start services with Docker Compose
+	@echo "Starting services with Docker Compose..."
+	@docker-compose up -d
+
+docker-compose-down: ## Stop services with Docker Compose
+	@echo "Stopping services with Docker Compose..."
+	@docker-compose down
+
+docker-compose-build: ## Build services with Docker Compose
+	@echo "Building services with Docker Compose..."
+	@docker-compose build
+
+docker-compose-logs: ## View logs with Docker Compose
+	@echo "Viewing logs with Docker Compose..."
+	@docker-compose logs -f
+
+docker-compose-restart: ## Restart services with Docker Compose
+	@echo "Restarting services with Docker Compose..."
+	@docker-compose restart
 
 # Health check
 health: ## Check if the server is running

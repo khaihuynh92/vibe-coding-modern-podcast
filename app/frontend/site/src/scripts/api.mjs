@@ -104,6 +104,22 @@ export const API = {
    */
   async getEpisodeById(id) {
     return makeRequest(ENDPOINTS.episodeById(id));
+  },
+
+  /**
+   * Get about page content
+   * @returns {Promise<Object>} About content data
+   */
+  async getAbout() {
+    return makeRequest(ENDPOINTS.about);
+  },
+
+  /**
+   * Get FAQ content
+   * @returns {Promise<Object>} FAQ content data
+   */
+  async getFAQ() {
+    return makeRequest(ENDPOINTS.faq);
   }
 };
 
@@ -116,7 +132,9 @@ export async function checkAPIHealth() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
     
-    const response = await fetch(`${API_CONFIG.baseUrl}/health`, {
+    // Health endpoint is at root level, not under /api
+    const baseUrl = API_CONFIG.baseUrl.replace('/api', '');
+    const response = await fetch(`${baseUrl}/health`, {
       signal: controller.signal
     });
     

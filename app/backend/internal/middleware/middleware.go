@@ -34,7 +34,7 @@ func Recovery() gin.HandlerFunc {
 func CORS(origins []string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		origin := c.Request.Header.Get("Origin")
-		
+
 		// Check if origin is allowed
 		allowed := false
 		for _, allowedOrigin := range origins {
@@ -74,8 +74,8 @@ func Security() gin.HandlerFunc {
 	}
 }
 
-// RateLimit returns a Gin middleware for rate limiting (basic implementation)
-func RateLimit() gin.HandlerFunc {
+// BasicRateLimit returns a Gin middleware for rate limiting (basic implementation)
+func BasicRateLimit() gin.HandlerFunc {
 	// This is a basic implementation - in production, use a proper rate limiter
 	return func(c *gin.Context) {
 		// TODO: Implement proper rate limiting with Redis or in-memory store
